@@ -1,0 +1,130 @@
+
+
+================================================================
+== Vitis HLS Report for 'adder'
+================================================================
+* Date:           Mon Jun 23 16:16:15 2025
+
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
+* Project:        adder
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: spartan7
+* Target device:  xc7s50-csga324-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  20.00 ns|  3.871 ns|     5.40 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    1|    1|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+-------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF  |  LUT  | URAM|
++-----------------+---------+-----+-------+-------+-----+
+|DSP              |        -|    -|      -|      -|    -|
+|Expression       |        -|    -|      0|     16|    -|
+|FIFO             |        -|    -|      -|      -|    -|
+|Instance         |        0|    -|     79|     90|    -|
+|Memory           |        -|    -|      -|      -|    -|
+|Multiplexer      |        -|    -|      -|      -|    -|
+|Register         |        -|    -|      -|      -|    -|
++-----------------+---------+-----+-------+-------+-----+
+|Total            |        0|    0|     79|    106|    0|
++-----------------+---------+-----+-------+-------+-----+
+|Available        |      150|  120|  65200|  32600|    0|
++-----------------+---------+-----+-------+-------+-----+
+|Utilization (%)  |        0|    0|     ~0|     ~0|    0|
++-----------------+---------+-----+-------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-----------------+---------------+---------+----+----+----+-----+
+    |     Instance    |     Module    | BRAM_18K| DSP| FF | LUT| URAM|
+    +-----------------+---------------+---------+----+----+----+-----+
+    |control_s_axi_U  |control_s_axi  |        0|   0|  79|  90|    0|
+    +-----------------+---------------+---------+----+----+----+-----+
+    |Total            |               |        0|   0|  79|  90|    0|
+    +-----------------+---------------+---------+----+----+----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------+----------+----+---+----+------------+------------+
+    | Variable Name| Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------+----------+----+---+----+------------+------------+
+    |c             |         +|   0|  0|  16|           9|           9|
+    +--------------+----------+----+---+----+------------+------------+
+    |Total         |          |   0|  0|  16|           9|           9|
+    +--------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+--------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-----------------------+-----+-----+------------+--------------+--------------+
+|s_axi_control_AWVALID  |   in|    1|       s_axi|       control|        scalar|
+|s_axi_control_AWREADY  |  out|    1|       s_axi|       control|        scalar|
+|s_axi_control_AWADDR   |   in|    6|       s_axi|       control|        scalar|
+|s_axi_control_WVALID   |   in|    1|       s_axi|       control|        scalar|
+|s_axi_control_WREADY   |  out|    1|       s_axi|       control|        scalar|
+|s_axi_control_WDATA    |   in|   32|       s_axi|       control|        scalar|
+|s_axi_control_WSTRB    |   in|    4|       s_axi|       control|        scalar|
+|s_axi_control_ARVALID  |   in|    1|       s_axi|       control|        scalar|
+|s_axi_control_ARREADY  |  out|    1|       s_axi|       control|        scalar|
+|s_axi_control_ARADDR   |   in|    6|       s_axi|       control|        scalar|
+|s_axi_control_RVALID   |  out|    1|       s_axi|       control|        scalar|
+|s_axi_control_RREADY   |   in|    1|       s_axi|       control|        scalar|
+|s_axi_control_RDATA    |  out|   32|       s_axi|       control|        scalar|
+|s_axi_control_RRESP    |  out|    2|       s_axi|       control|        scalar|
+|s_axi_control_BVALID   |  out|    1|       s_axi|       control|        scalar|
+|s_axi_control_BREADY   |   in|    1|       s_axi|       control|        scalar|
+|s_axi_control_BRESP    |  out|    2|       s_axi|       control|        scalar|
+|ap_clk                 |   in|    1|  ap_ctrl_hs|         adder|  return value|
+|ap_rst_n               |   in|    1|  ap_ctrl_hs|         adder|  return value|
+|interrupt              |  out|    1|  ap_ctrl_hs|         adder|  return value|
++-----------------------+-----+-----+------------+--------------+--------------+
+

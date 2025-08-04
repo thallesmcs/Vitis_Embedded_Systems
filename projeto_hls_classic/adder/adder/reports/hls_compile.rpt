@@ -1,0 +1,120 @@
+
+
+================================================================
+== Synthesis Summary Report of 'adder'
+================================================================
++ General Information: 
+    * Date:           Mon Jun 23 16:16:15 2025
+    * Version:        2024.2 (Build 5238294 on Nov  8 2024)
+    * Project:        adder
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: spartan7
+    * Target device:  xc7s50-csga324-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +---------+------+-------+---------+--------+----------+---------+------+----------+------+----+----------+-----------+-----+
+    | Modules | Issue|       | Latency | Latency| Iteration|         | Trip |          |      |    |          |           |     |
+    | & Loops | Type | Slack | (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined| BRAM | DSP|    FF    |    LUT    | URAM|
+    +---------+------+-------+---------+--------+----------+---------+------+----------+------+----+----------+-----------+-----+
+    |+ adder  |     -|  10.73|        0|   0.000|         -|        1|     -|        no|     -|   -|  79 (~0%)|  106 (~0%)|    -|
+    +---------+------+-------+---------+--------+----------+---------+------+----------+------+----+----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | c        | 0x10   | 32    | R      | Data signal of c                 |                                                                      |
+| s_axi_control | c_ctrl   | 0x14   | 32    | R      | Control signal of c              | 0=c_ap_vld                                                           |
+| s_axi_control | a        | 0x20   | 32    | W      | Data signal of a                 |                                                                      |
+| s_axi_control | b        | 0x28   | 32    | W      | Data signal of b                 |                                                                      |
++---------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+------------+
+| Argument | Direction | Datatype   |
++----------+-----------+------------+
+| c        | out       | ap_int<9>& |
+| a        | in        | ap_int<8>  |
+| b        | in        | ap_int<8>  |
++----------+-----------+------------+
+
+* SW-to-HW Mapping
++----------+---------------+----------+----------------------------------+
+| Argument | HW Interface  | HW Type  | HW Info                          |
++----------+---------------+----------+----------------------------------+
+| c        | s_axi_control | register | name=c offset=0x10 range=32      |
+| c        | s_axi_control | register | name=c_ctrl offset=0x14 range=32 |
+| a        | s_axi_control | register | name=a offset=0x20 range=32      |
+| b        | s_axi_control | register | name=b offset=0x28 range=32      |
++----------+---------------+----------+----------------------------------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++---------+-----+--------+----------+-----+--------+---------+
+| Name    | DSP | Pragma | Variable | Op  | Impl   | Latency |
++---------+-----+--------+----------+-----+--------+---------+
+| + adder | 0   |        |          |     |        |         |
+|   c     |     |        | add_ln14 | add | fabric | 0       |
++---------+-----+--------+----------+-----+--------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| Name              | Usage     | Type      | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|                   |           |           |      |      |        |          |      |         | Banks            |
++-------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| + adder           |           |           | 0    | 0    |        |          |      |         |                  |
+|   control_s_axi_U | interface | s_axilite |      |      |        |          |      |         |                  |
++-------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+--------------------------------------+-------------------------------+
+| Type      | Options                              | Location                      |
++-----------+--------------------------------------+-------------------------------+
+| interface | s_axilite port=a bundle=control      | adder.cpp:9 in adder, a       |
+| interface | s_axilite port=b bundle=control      | adder.cpp:10 in adder, b      |
+| interface | s_axilite port=c bundle=control      | adder.cpp:11 in adder, c      |
+| interface | s_axilite port=return bundle=control | adder.cpp:12 in adder, return |
++-----------+--------------------------------------+-------------------------------+
+
+
