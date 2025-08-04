@@ -1,0 +1,35 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+| Date         : Fri Jul 18 17:55:08 2025
+| Host         : DESKTOP-8L9PMU5 running 64-bit major release  (build 9200)
+| Command      : report_utilization -hierarchical -hierarchical_depth 5 -file ./report/mult_hw_1000_utilization_hierarchical_synth.rpt
+| Design       : bd_0_wrapper
+| Device       : xc7s50csga324-1
+| Speed File   : -1
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++-----------------------------+------------------------------------------------+------------+------------+---------+------+-----+--------+--------+------------+
+|           Instance          |                     Module                     | Total LUTs | Logic LUTs | LUTRAMs | SRLs | FFs | RAMB36 | RAMB18 | DSP Blocks |
++-----------------------------+------------------------------------------------+------------+------------+---------+------+-----+--------+--------+------------+
+| bd_0_wrapper                |                                          (top) |        164 |        153 |       0 |   11 | 144 |      3 |      0 |          3 |
+|   bd_0_i                    |                                           bd_0 |        164 |        153 |       0 |   11 | 144 |      3 |      0 |          3 |
+|     hls_inst                |                                bd_0_hls_inst_0 |        164 |        153 |       0 |   11 | 144 |      3 |      0 |          3 |
+|       inst                  |                   bd_0_hls_inst_0_mult_hw_1000 |        164 |        153 |       0 |   11 | 144 |      3 |      0 |          3 |
+|         (inst)              |                   bd_0_hls_inst_0_mult_hw_1000 |         11 |          0 |       0 |   11 |  59 |      0 |      0 |          0 |
+|         control_s_axi_U     |     bd_0_hls_inst_0_mult_hw_1000_control_s_axi |        111 |        111 |       0 |    0 |  66 |      3 |      0 |          0 |
+|           (control_s_axi_U) |     bd_0_hls_inst_0_mult_hw_1000_control_s_axi |         34 |         34 |       0 |    0 |  66 |      0 |      0 |          0 |
+|           int_A             | bd_0_hls_inst_0_mult_hw_1000_control_s_axi_ram |         52 |         52 |       0 |    0 |   0 |      1 |      0 |          0 |
++-----------------------------+------------------------------------------------+------------+------------+---------+------+-----+--------+--------+------------+
+
+

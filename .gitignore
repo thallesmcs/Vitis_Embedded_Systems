@@ -1,0 +1,11 @@
+# Arquivos de log e gerados pelo Vitis/Vivado
+*.log
+*.jou
+.Xil/
+solution*/
+.autopilot/
+
+# Arquivos de sistema e build
+.DS_Store
+*.o
+*.exe
