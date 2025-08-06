@@ -1,1 +1,0 @@
-Explicação do Hardware de aceleração para multiplicação de matrizes.
