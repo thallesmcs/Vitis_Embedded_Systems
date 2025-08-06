@@ -32,3 +32,5 @@ solution*/
 *Debug/
 *Release/
 *.elf
+
+*.reports/
