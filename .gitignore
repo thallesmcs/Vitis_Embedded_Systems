@@ -33,4 +33,4 @@ solution*/
 *Release/
 *.elf
 
-*.reports/
+*reports/
