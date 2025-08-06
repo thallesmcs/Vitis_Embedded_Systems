@@ -24,9 +24,9 @@ O projeto é organizado da seguinte forma para manter uma clara separação entr
 * **Vivado/Vitis:** 2025.1, 2024.1 e Classic
 * **Target FPGA:** Xilinx Spartan-7 XC7S50-CSGA324 FPGA
 
-## Como Começar
+<!-- ## Como Começar
 
 1.  Clone o repositório.
 2.  Escolha um projeto de hardware em `/hardware`.
 3.  Exporte o hardware (`.xsa`) para a pasta correspondente em `/software/platforms`.
-4.  No Vitis, crie um novo workspace e uma aplicação usando a plataforma exportada e o código fonte de `/software/apps`.
+4.  No Vitis, crie um novo workspace e uma aplicação usando a plataforma exportada e o código fonte de `/software/apps`. -->
