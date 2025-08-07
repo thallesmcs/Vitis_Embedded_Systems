@@ -1,15 +1,15 @@
-# Projetos de Sistemas Embarcados com Vitis e HLS
+# Projetos com Vitis HLS
 
 ## Descrição
 
-Este repositório reúne uma coleção de projetos desenvolvidos com High-Level Synthesis (HLS) para FPGAs da Xilinx, utilizando a ferramenta Vitis HLS. Os projetos têm como objetivo gerar IPs de aceleração que podem ser integrados a sistemas embarcados baseados em SoC, como o MicroBlaze.
+Este repositório reúne uma coleção de projetos desenvolvidos com High-Level Synthesis (HLS) para FPGAs da Xilinx, utilizando a ferramenta Vitis HLS. Os projetos têm como objetivo gerar IPs que podem ser integrados a sistemas embarcados FPGA.
 
-Cada projeto HLS pode conter arquivos de síntese, implementação e relatórios de desempenho, compatíveis com diferentes versões do Vitis (2024.2, 2025.1 e versões legadas).
+Cada projeto HLS pode conter arquivos de síntese e implementação, compatíveis com diferentes versões do Vitis (2024.2, 2025.1 e versões legadas).
 <!-- Este repositório contém uma coleção de projetos de Sistemas em Chip (SoC) para FPGAs da Xilinx. Cada projeto integra um processador soft-core Microblaze com aceleradores de hardware customizados, desenvolvidos utilizando High-Level Synthesis (HLS). -->
 
 ## Estrutura do Repositório
 
-O repositório conta com diferentes IPs criadas apartir do Vitis para uso no Vivado:
+Este repositório contém IPs customizados desenvolvidos com Vitis HLS, prontos para serem integrados em projetos Vivado para FPGAs da Xilinx.
 
 <!-- - **/hardware**: Contém os projetos de hardware do Vivado. Cada subpasta é um projeto completo. Acompanhe os Readme dentro de cada hardware com uma breve explicação dentro do funcionamento.
   - `acel_matrizes/`: Projeto que integra um acelerador de multiplicação de matrizes com IP fixa de 16x16.
