@@ -50,10 +50,10 @@ solution*/
 **/solution*/
 **/csim*/
 **/sim/
-# **/syn*/
+**/syn*/
 **/impl*/
 **/xsim*/
-# **/hls/
+**/hls/
 **/logs/
 **/reports/
 
@@ -71,15 +71,15 @@ HLS/**/*.zip
 *.xclbin
 
 # Pastas de build genéricas (escopo recursivo)
-# **/build/
-# **/Debug/
-# **/Release/
+**/build/
+**/Debug/
+**/Release/
 *.tcl
 *.xml
 *.analytics
 *.gitignore
 *component.xml
 *.bat
-
+*.cmdline
 
 **/.rigel_lopper/
